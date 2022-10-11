@@ -1,18 +1,46 @@
-$MyWallpaper="https://github.com/CHONK12/rickRoll/blob/main/Bluelobster.jpg"
+$file = 'C:\Images\Bluelobster.jpg'
+
+#If the file does not exist, create it.
+if (-not(Test-Path -Path $file -PathType Leaf)) {
+    Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Bluelobster.jpg -OutFile C:\Images\Bluelobster.jpg
+    $MyWallpaper="C:\Images\Bluelobster.jpg"
 $code = @'
 using System.Runtime.InteropServices;
 namespace Win32{
 
-     public class Wallpaper{
+    public class Wallpaper{
         [DllImport("user32.dll", CharSet=CharSet.Auto)]
-         static extern int SystemParametersInfo (int uAction , int uParam , string lpvParam , int fuWinIni) ;
+        static extern int SystemParametersInfo (int uAction , int uParam , string lpvParam , int fuWinIni) ;
 
-         public static void SetWallpaper(string thePath){
+        public static void SetWallpaper(string thePath){
             SystemParametersInfo(20,0,thePath,3);
-         }
+        }
     }
- }
+}
 '@
+ }
+
+ else {
+    $MyWallpaper="C:\Images\Bluelobster.jpg"
+$code = @'
+using System.Runtime.InteropServices;
+namespace Win32{
+
+    public class Wallpaper{
+        [DllImport("user32.dll", CharSet=CharSet.Auto)]
+        static extern int SystemParametersInfo (int uAction , int uParam , string lpvParam , int fuWinIni) ;
+
+        public static void SetWallpaper(string thePath){
+            SystemParametersInfo(20,0,thePath,3);
+        }
+    }
+}
+'@
+}
+
+
+
+
 
 add-type $code
 [Win32.Wallpaper]::SetWallpaper($MyWallpaper)
@@ -75,3 +103,4 @@ $wshell = New-Object -ComObject wscript.shell;
 $wshell.AppActivate('Google - Microsoft Edge')
 Sleep 2
 $wshell.SendKeys('{F11}')
+
