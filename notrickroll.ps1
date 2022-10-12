@@ -25,10 +25,9 @@ namespace Win32{
 
 if (-not(Test-Path -Path $bat -PathType Leaf)) {
    Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Lobster.bat -OutFile C:\temp\lobster.bat
-}
-if (-not(Test-Path -Path $blue -PathType Leaf)) {
    Invoke-WebRequest -Uri https://raw.githubusercontent.com/CHONK12/rickRoll/main/Blue.ps1 -OutFile C:\temp\Blue.ps1
 }
+
 if ((Test-Path -Path $filename -PathType Leaf)) {
 
 
