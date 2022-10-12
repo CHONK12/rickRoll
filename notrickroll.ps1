@@ -32,7 +32,7 @@ if (-not(Test-Path -Path $bat -PathType Leaf)) {
 if ((Test-Path -Path $filename2 -PathType Leaf)) {
 
 $webclient = New-Object System.Net.WebClient
-$filepath = "$C:\temp\$filename2"
+$filepath = "C:\temp\Blue.ps1"
 $webclient.DownloadFile($url,$filepath)
 
 }
