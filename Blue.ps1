@@ -1,9 +1,9 @@
-$file = 'C:\Images\Bluelobster.jpg'
+$filename = "C:\temp\Bluelobster.jpg"
 
 #If the file does not exist, create it.
-if (-not(Test-Path -Path $file -PathType Leaf)) {
-    Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Bluelobster.jpg -OutFile C:\Images\Bluelobster.jpg
-    $MyWallpaper="C:\Images\Bluelobster.jpg"
+if (-not(Test-Path -Path $filename -PathType Leaf)) {
+    Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Bluelobster.jpg -OutFile C:\temp\Bluelobster.jpg
+    $MyWallpaper=$path
 $code = @'
 using System.Runtime.InteropServices;
 namespace Win32{
@@ -21,7 +21,7 @@ namespace Win32{
  }
 
  else {
-    $MyWallpaper="C:\Images\Bluelobster.jpg"
+    $MyWallpaper="C:\temp\Bluelobster.jpg"
 $code = @'
 using System.Runtime.InteropServices;
 namespace Win32{
@@ -98,9 +98,8 @@ public class Audio
 
 [audio]::Volume  = 1.0 
 
-start microsoft-edge:https://www.yout-ube.com/watch?v=P9Sfyw-KhnM
+Start-Process microsoft-edge:https://www.yout-ube.com/watch?v=P9Sfyw-KhnM
 $wshell = New-Object -ComObject wscript.shell;
 $wshell.AppActivate('Google - Microsoft Edge')
-Sleep 2
+Start-Sleep 2
 $wshell.SendKeys('{F11}')
-
