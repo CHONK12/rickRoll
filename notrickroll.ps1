@@ -1,9 +1,5 @@
 $filename = "C:\temp\rickroll.jpg"
 $bat = 'C:\temp\lobster.bat'
-$filename2 = 'C:\temp\Blue.ps1'
-$url = 'https://github.com/CHONK12/rickRoll/raw/main/Blue.ps1'
-$webclient = New-Object System.Net.WebClient
-$filepath = "C:\temp\Blue.ps1"
 
 #If the file does not exist, create it.
 if (-not(Test-Path -Path $filename -PathType Leaf)) {
@@ -31,10 +27,6 @@ if (-not(Test-Path -Path $bat -PathType Leaf)) {
   
 }
 
-if ((Test-Path -Path $filename2 -PathType Leaf)) {
-   $webclient.DownloadFile($url,$filepath)
-
-}
 
 if ((Test-Path -Path $filename -PathType Leaf)) {
 
