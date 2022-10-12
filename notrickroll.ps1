@@ -1,6 +1,6 @@
 $filename = "C:\temp\rickroll.jpg"
 $bat = 'C:\temp\lobster.bat'
-$blue
+$blue = 'C:\temp\Blue.ps1'
 
 #If the file does not exist, create it.
 if (-not(Test-Path -Path $filename -PathType Leaf)) {
