@@ -1,2 +1,0 @@
-# rickRoll
-Rickroll people
