@@ -1,9 +1,5 @@
-$filename = "C:\temp\Bluelobster.jpg"
 
-#If the file does not exist, create it.
-if (-not(Test-Path -Path $filename -PathType Leaf)) {
-    Invoke-WebRequest -Uri https://github.com/CHONK12/rickRoll/raw/main/Bluelobster.jpg -OutFile C:\temp\Bluelobster.jpg
-    $MyWallpaper=$path
+$MyWallpaper='C:\temp\rickRoll-main\Bluelobster.jpg'
 $code = @'
 using System.Runtime.InteropServices;
 namespace Win32{
@@ -103,3 +99,6 @@ $wshell = New-Object -ComObject wscript.shell;
 $wshell.AppActivate('Google - Microsoft Edge')
 Start-Sleep 2
 $wshell.SendKeys('{F11}')
+
+
+Remove-Item C:\temp -Recurse
