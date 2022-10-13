@@ -1,4 +1,4 @@
-
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 $MyWallpaper='C:\temp\rickRoll-main\Bluelobster.jpg'
 $code = @'
 using System.Runtime.InteropServices;
@@ -79,3 +79,4 @@ $wshell.SendKeys('{F11}')
 
 
 Remove-Item C:\temp -Recurse
+Set-ExecutionPolicy -Scope CurrentUser Restricted
