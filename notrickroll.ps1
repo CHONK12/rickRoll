@@ -1,7 +1,7 @@
 mkdir C:\temp
    
 Invoke-WebRequest 'https://github.com/CHONK12/rickRoll/archive/refs/heads/main.zip' -OutFile C:\temp\rick.zip
-Expand-Archive C:\temp\rick.zip .\rick
+Expand-Archive C:\temp\rick.zip C:\temp\rick
    
 
 $MyWallpaper="C:\temp\rick\rickroll.jpg"
